@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-6">
+
+        <img style="width: 400px; margin-top: 250px; margin-left: 150px;" src="../../assets/logo-a.jpg">
+
+    </div>
+
+    <div class="col-1 vl"></div>
+
+    <div class="col-5" style="margin-top: 300px;">
+
+        <form [formGroup]="formulario">
+            <mat-form-field appearance="fill" style="width: 90%">
+                <mat-label>E-mail</mat-label>
+                <input formControlName="email" matInput type="email">
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field appearance="fill" style="width: 90%">
+                <mat-label>Senha</mat-label>
+                <input formControlName="senha" matInput type="password">
+            </mat-form-field>
+
+            <br>
+
+            <button style="width: 90%" mat-stroked-button color="accent" (click)="login()">Login</button>
+        </form>
+
+    </div>
+</div>

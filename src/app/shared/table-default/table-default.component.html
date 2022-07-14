@@ -1,0 +1,14 @@
+<app-card-default [titulo]="titulo">
+    <table mat-table [dataSource]="registros" style="width: 100%">  
+
+        <ng-container *ngFor="let coluna of colunas; let colIndex = index" matColumnDef="{{coluna.valor}}">
+            <th mat-header-cell *matHeaderCellDef> {{coluna.visualizacao}} </th>
+            <td mat-cell *matCellDef="let element"> {{element[coluna.valor]}} </td>
+        </ng-container>  
+        
+        <tr mat-header-row *matHeaderRowDef="retornaColunas()"></tr>
+        <tr class="mat-row" mat-row *matRowDef="let row; columns: retornaColunas()"></tr>
+    
+    </table>
+    
+</app-card-default>

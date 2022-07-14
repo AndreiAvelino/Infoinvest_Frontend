@@ -1,0 +1,9 @@
+body {
+  height: 100%;
+}
+
+.vl {
+    border-left: 6px solid green;
+    height: 98vh;
+}
+

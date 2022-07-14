@@ -1,0 +1,50 @@
+<app-card-default titulo="Cadastro de ativos">
+
+    <form [formGroup]="formulario">
+
+        <div class="row">
+
+            <div class="col-12">
+                <mat-form-field style="width: 100%" appearance="fill">
+                    <mat-label>Descrição</mat-label>
+                    <input matInput formControlName="descricao">
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <mat-form-field style="width: 100%" appearance="fill">
+                  <mat-label>Classiicação</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let classificacao of classificacoes" [value]="classificacao.id">
+                      {{classificacao.descricao}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field style="width: 100%" appearance="fill">
+                    <mat-label>Cotação</mat-label>
+                    <input matInput formControlName="cotacao" type="number">
+                </mat-form-field>
+            </div>
+
+        </div>
+                
+        <div style="display: flex; justify-content: flex-end; width: 100%;">
+            <button [disabled]="formulario.status == 'INVALID'" 
+                mat-flat-button 
+                color="primary"                 
+                (click)="post()">Salvar</button>
+        </div>
+        
+    </form>
+
+</app-card-default>
+
+<app-table-default [registros]="registros"
+                   [colunas]="colunas"
+></app-table-default>

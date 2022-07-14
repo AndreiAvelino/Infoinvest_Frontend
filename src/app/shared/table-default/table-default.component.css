@@ -1,0 +1,9 @@
+.estilo{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mat-row:hover {
+    background: whitesmoke;
+    cursor: pointer
+}

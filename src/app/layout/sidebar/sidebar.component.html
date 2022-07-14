@@ -1,0 +1,22 @@
+<mat-sidenav-container class="layout">
+  
+  <mat-sidenav mode="side" class="layout-sidebar" #sidenav [opened]="StateSidebar" disableClose>
+    <mat-nav-list class="mat-list-base">
+
+        <mat-list-item *ngFor="let item of menu" routerLink={{item.link}}>
+
+            <h4 mat-line>
+              {{item.nome}}
+            </h4>
+
+            <mat-icon mat-list-icon>{{item.icone}}</mat-icon>
+            
+        </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="layout-content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
